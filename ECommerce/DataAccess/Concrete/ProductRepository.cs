@@ -11,10 +11,10 @@ namespace ECommerce.DataAccess.Concrete
 {
     public class ProductRepository : IProductRepository
     {
-        private ECommerceDataContext _context;
+        private EECommerceDataContext _context;
         public ProductRepository()
         {
-            _context = new ECommerceDataContext();
+            _context = new EECommerceDataContext();
         }
         public void AddData(Product data)
         {
@@ -44,14 +44,14 @@ namespace ECommerce.DataAccess.Concrete
         public void UpdateData(Product data)
         {
             var item=_context.Products.SingleOrDefault(x => x.Id == data.Id);
-            item = new Product
-            {
-                Name = data.Name,
-                Price = data.Price,
-                Description = data.Description,
-                Quantity = data.Quantity,
-                Discount = data.Discount,
-            };
+
+
+            item.Name = data.Name;
+            item.Price = data.Price;
+            item.Description = data.Description;
+            item.Quantity = data.Quantity;
+            item.Discount = data.Discount;
+           
             _context.SubmitChanges();
         }
     }

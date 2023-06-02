@@ -23,7 +23,7 @@ namespace ECommerce.DataAccess.SqlServer
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ECommerceDb")]
-	public partial class ECommerceDataContext : System.Data.Linq.DataContext
+	public partial class EECommerceDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -44,31 +44,31 @@ namespace ECommerce.DataAccess.SqlServer
     partial void DeleteProduct(Product instance);
     #endregion
 		
-		public ECommerceDataContext() : 
+		public EECommerceDataContext() : 
 				base(global::ECommerce.Properties.Settings.Default.ECommerceDbConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ECommerceDataContext(string connection) : 
+		public EECommerceDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ECommerceDataContext(System.Data.IDbConnection connection) : 
+		public EECommerceDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ECommerceDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public EECommerceDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ECommerceDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public EECommerceDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
